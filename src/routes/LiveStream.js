@@ -1,5 +1,5 @@
 const express = require("express");
-const liveStreamController = require("../controllers/liveStreamController");
+const liveStreamController = require("../controllers/LiveStream");
 
 const liveStreamRouter = express.Router();
 

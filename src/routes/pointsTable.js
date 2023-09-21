@@ -1,5 +1,5 @@
 const express = require("express");
-const pointsTableController = require("../controllers/pointsTableController");
+const pointsTableController = require("../controllers/pointsTable");
 
 const pointsTableRouter = express.Router();
 

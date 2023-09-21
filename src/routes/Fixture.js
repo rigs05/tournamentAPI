@@ -1,5 +1,5 @@
 const express = require("express");
-const fixtureController = require("../controllers/fixtureController");
+const fixtureController = require("../controllers/Fixture");
 
 const fixtureRouter = express.Router();
 

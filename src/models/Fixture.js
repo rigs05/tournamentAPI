@@ -9,14 +9,11 @@ const fixtureSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  teams: [
+  teamName:
     {
-      teamName: {
-        type: String,
-        required: true,
-      },
+      type: String,
+      required: true,
     },
-  ],
 });
 
 const Fixture = mongoose.model("Fixture", fixtureSchema);

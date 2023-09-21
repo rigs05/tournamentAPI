@@ -5,6 +5,6 @@ const fixtureRouter = express.Router();
 
 fixtureRouter.get("/", fixtureController.getFixtures);
 fixtureRouter.post("/", fixtureController.addFixture); 
-fixtureRouter.put("/:fixtureId", fixtureController.updateFixture); 
+fixtureRouter.put("/", fixtureController.updateFixture); 
 
 module.exports = fixtureRouter;

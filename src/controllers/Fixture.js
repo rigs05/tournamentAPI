@@ -11,8 +11,8 @@ const getFixtures = async (req, res) => {
 
 const addFixture = async (req, res) => {
   try {
-    const { sport, date, teams } = req.body;
-    const fixture = new Fixture({ sport, date, teams });
+    const { sport, date, teamName } = req.body;
+    const fixture = new Fixture({ sport, date, teamName });
     await fixture.save();
     res.json({ message: "Fixture added successfully", fixture });
   } catch (err) {
@@ -22,19 +22,18 @@ const addFixture = async (req, res) => {
 
 const updateFixture = async (req, res) => {
   try {
-    const { fixtureId } = req.params;
-    const { sport, date, teams } = req.body;
+    const { fixtureId, sport, date, teamName } = req.body;
     const fixture = await Fixture.findByIdAndUpdate(
       fixtureId,
-      { sport, date, teams },
+      { sport, date, teamName },
       { new: true }
     );
     if (!fixture) {
       return res.status(404).json({ error: "Fixture not found" });
     }
-    res.json({ message: "Fixture updated successfully", fixture });
+    return res.json({ message: "Fixture updated successfully", fixture });
   } catch (err) {
-    res.status(500).json({ error: "Could not update fixture" });
+    return res.status(500).json({ error: "Could not update fixture" });
   }
 };
 

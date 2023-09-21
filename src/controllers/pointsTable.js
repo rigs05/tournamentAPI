@@ -22,8 +22,7 @@ const addTeam = async (req, res) => {
 
 const updatePoints = async (req, res) => {
   try {
-    const { teamId } = req.params;
-    const { points } = req.body;
+    const { teamId, points } = req.body;
     const team = await PointsTable.findById(teamId);
     if (!team) {
       return res.status(404).json({ error: "Team not found" });

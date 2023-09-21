@@ -22,8 +22,7 @@ const addLiveStream = async (req, res) => {
 
 const updateLiveStream = async (req, res) => {
   try {
-    const { liveStreamId } = req.params;
-    const { sport, youtubeLink } = req.body;
+    const { liveStreamId, sport, youtubeLink } = req.body;
     const liveStream = await LiveStream.findByIdAndUpdate(
       liveStreamId,
       { sport, youtubeLink },

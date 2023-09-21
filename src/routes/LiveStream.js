@@ -5,6 +5,6 @@ const liveStreamRouter = express.Router();
 
 liveStreamRouter.get("/", liveStreamController.getLiveStreams);
 liveStreamRouter.post("/", liveStreamController.addLiveStream);
-liveStreamRouter.put("/:liveStreamId", liveStreamController.updateLiveStream); 
+liveStreamRouter.put("/", liveStreamController.updateLiveStream); 
 
 module.exports = liveStreamRouter;

@@ -3,8 +3,10 @@ const livePoll = require('../controllers/LivePoll');
 
 const livePollRouter = express.Router();
 
-livePollRouter.get('/', async (req, res) => {
-    
-});
+livePollRouter.get('/', livePoll.getPollData);
+// livePollRouter.post('/vote', livePoll.postVote);
+
 
 module.exports = livePollRouter;
+
+// WORKING ON SOCKETS

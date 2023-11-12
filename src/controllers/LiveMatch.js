@@ -3,7 +3,7 @@ const matchCard = require("../models/LiveMatch");
 const getLiveCard = async (req, res) => {
     try {
         const teams = await matchCard.find();
-        if (!teams) {
+        if (!teams || teams.length === 0) {
             return res.status(400).json({ message: "Team data not found." });
         }
         const teamData = teams.map((team) => {
